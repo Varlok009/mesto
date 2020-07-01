@@ -1,0 +1,9 @@
+.page__card-container {
+  margin-top: 45px;
+}
+
+@media screen and (max-width: 660px) {
+  .page__card-container {
+    margin-top: 35px;
+  }
+}

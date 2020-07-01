@@ -1,0 +1,32 @@
+.profile__info {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  justify-self: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .profile__info {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .profile__info {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .profile__info {
+    align-items: center;
+  }
+}
