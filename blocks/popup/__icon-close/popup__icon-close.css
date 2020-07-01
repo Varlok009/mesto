@@ -1,0 +1,28 @@
+
+.popup__icon-close {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: none;
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url(../../../images/cloce_icon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    align-self: flex-end;
+    cursor: pointer;
+    transition: opacity 0.2s linear;
+}
+
+.popup__icon-close:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 660px) {
+    .popup__icon-close {
+      height: 30px;
+      width: 30px;
+    }
+  }

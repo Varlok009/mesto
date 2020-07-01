@@ -1,0 +1,17 @@
+
+.popup__container {
+  display: flex;
+  flex-direction: column;
+  width: 470px;
+  position: relative;
+  top: calc(50% - 370px / 2);;
+  left: calc(50% - (470px - 40px) / 2);
+}
+
+@media screen and (max-width: 660px) {
+  .popup__container {
+    width: 270px;
+    top: calc(50% - 226px / 2);;
+    left: calc(50% - (270px - 30px) / 2);
+  }
+}
