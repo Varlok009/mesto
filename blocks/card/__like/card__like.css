@@ -3,9 +3,10 @@
   padding: 0;
   border: none;
   width: 21px;
+  height: 19px;
   background-image: url(../../../images/photo_like.svg);
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-color: #FFFFFF;
-  margin-left: 5px;
 }
