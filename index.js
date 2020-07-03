@@ -9,14 +9,12 @@ let profileTitle = document.querySelector('.profile__title');
 let inputName = popupEdit.querySelector('.popup__input_destiny_name');
 let inputProffession = popupEdit.querySelector('.popup__input_destiny_proffession');
 
-//синхронизируем данные по имени и профессии на странице и в форме
-inputName.value = profileName.textContent;
-inputProffession.value = profileTitle.textContent;
-
 editButton.addEventListener('click', visionEditForm); //запускаем функцию по клику на кнопку редактирования
 closeButton.addEventListener('click', visionEditForm);
 
 function visionEditForm(evt) { //функция замены модификатора (display: none)
+  inputName.value = profileName.textContent;
+  inputProffession.value = profileTitle.textContent;
   popupEdit.classList.toggle('popup_close');
   evt.preventDefault();
 }
@@ -25,8 +23,14 @@ function visionEditForm(evt) { //функция замены модификат�
 form.addEventListener('submit', saveEdit);
 
 function saveEdit(evt) { 
-  evt.preventDefault();
-  profileName.textContent = inputName.value;
-  profileTitle.textContent = inputProffession.value;
-  visionEditForm(evt);
+   if (inputName.value !=='' && inputProffession.value !== '') {
+    evt.preventDefault();
+    profileName.textContent = inputName.value;
+    profileTitle.textContent = inputProffession.value;
+    visionEditForm(evt);
+  } else {
+      alert('Для продолжения заполните обязательные поля');
+      evt.preventDefault();
+  }
+
 }
