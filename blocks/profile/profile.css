@@ -11,13 +11,7 @@
   color: white;
   display: grid;
   align-items: center;
-  grid-template-columns: 13.6% 1fr 150px;
-}
-
-@media screen and (max-width: 1024px) {
-  .profile {
-    grid-template-columns: 13.6% 1fr 100px
-  }
+  grid-template-columns: 13.6% 1fr 17%;
 }
 
 @media screen and (max-width: 660px) {

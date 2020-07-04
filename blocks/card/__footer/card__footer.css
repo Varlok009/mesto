@@ -3,11 +3,9 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  min-height: 80px;
   background-color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 25px 20px;
-  border-radius: 0 0 10px 10px;
 }

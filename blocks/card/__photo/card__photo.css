@@ -1,8 +1,33 @@
+/* Ндеюсь правильно понял про маштабирование: с помощью медиазапросов сделал
+логичнее расчет высоты (а object-fit: cover не искажает пропорции). Если имелось ввиду,
+что картинки на всех разрешениях должны быть
+квадратными, то я нашел только один вариант и то через абсолют (можно через
+фоновое изображение, но здесь очевидно нужно вставлять именно через img)/
+Если нужен именно второй вариант, то буду благодарен за наводку, так как я 
+перегуглил все что мог))*/
 
 .card__photo {
+  box-sizing: border-box;
   width: 100%;
-  height: 280px;
-  border-radius:  10px 10px 0 0;
+  max-height: 280px;
+  overflow: hidden;
   object-fit: cover;
-  
+}
+
+@media screen and (max-width: 1024px) {
+  .card__photo {
+    max-height: 342px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card__photo {
+    max-height: 254px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .card__photo {
+    max-height: 280px;
+  }
 }

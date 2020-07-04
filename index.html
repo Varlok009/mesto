@@ -30,45 +30,45 @@
       <section class="card-container page__card-container">
 
         <article class="card">
-          <img src="./images/photo_grid/black-hole.jpg" alt="Черная дыра" class="card__photo">
+          <img src="./images/photo_grid/lobster-nebula.jpg" alt="Туманность омаров" class="card__photo">
           <div class="card__footer">
-            <p class="card__title">Альфа центавра</p>
-            <button class="card__like"></button>
+            <h2 class="card__title">Туманность омаров</h2>
+            <button class="card__like" type="button"></button>
           </div>
         </article>
         <article class="card">
-          <img src="./images/photo_grid/black-hole2.jpg" alt="Черная дыра" class="card__photo">
+          <img src="./images/photo_grid/milky-way.jpg" alt="Млечный путь" class="card__photo">
           <div class="card__footer">
-            <p class="card__title">Альфа три</p>
-            <button class="card__like"></button>
+            <h2 class="card__title">Млечный путь</h2>
+            <button class="card__like" type="button"></button>
           </div>
         </article>
         <article class="card">
-          <img src="./images/photo_grid/black-hole3.jpg" alt="Черная дыра" class="card__photo">
+          <img src="./images/photo_grid/orion.jpg" alt="Созвездие Ориона" class="card__photo">
           <div class="card__footer">
-            <p class="card__title">Бетта два</p>
-            <button class="card__like"></button>
+            <h2 class="card__title">Созвездие Ориона</h2>
+            <button type="button" class="card__like" type="button"></button>
           </div>
         </article>
         <article class="card">
-          <img src="./images/photo_grid/black-hole4.jpg" alt="Черная дыра" class="card__photo">
+          <img src="./images/photo_grid/solar-system.jpg" alt="Солнечная система" class="card__photo">
           <div class="card__footer">
-            <p class="card__title">Сибаста</p>
-            <button class="card__like"></button>
+            <h2 class="card__title">Солнечная система</h2>
+            <button class="card__like" type="button"></button>
           </div>
         </article>
         <article class="card">
-          <img src="./images/photo_grid/black-hole.jpg" alt="Черная дыра" class="card__photo">
+          <img src="./images/photo_grid/dawn.jpg" alt="Рассвет" class="card__photo">
           <div class="card__footer">
-            <p class="card__title">Альфа центавра</p>
-            <button class="card__like"></button>
+            <h2 class="card__title">Рассвет</h2>
+            <button class="card__like" type="button"></button>
           </div>
         </article>
         <article class="card">
-          <img src="./images/photo_grid/black-hole2.jpg" alt="Черная дыра" class="card__photo">
+          <img src="./images/photo_grid/wormhole.jpg" alt="Кротовая нора" class="card__photo">
           <div class="card__footer">
-            <p class="card__title">Альфа три</p>
-            <button class="card__like"></button>
+            <h2 class="card__title">Кротовая нора</h2>
+            <button class="card__like" type="button"></button>
           </div>
         </article>
 
@@ -80,17 +80,17 @@
     </footer>
   </div>
 
-  <section class="popup popup_open popup_close">
-    <form class="popup__container">
+  <section class="popup">
+    <form class="popup__container" method="GET" action='#' name='profile-info'>
       <h3 class="popup__head">Редактировать профиль</h3>
       <fieldset class="popup__form">          
-        <input type="text" name="name" class="popup__input popup__input_destiny_name">
-        <input type="text" name="proffession" class="popup__input popup__input_destiny_proffession">
+        <input type="text" name="name" class="popup__input popup__input_destiny_name" required>
+        <input type="text" name="proffession" class="popup__input popup__input_destiny_proffession" required>
         <button type="submit" class="popup__button-save">Сохранить</button>
       </fieldset>
-      <button class="popup__icon-close"></button>
+      <button class="popup__icon-close" type="button"></button>
     </form>      
   </section>
-  <script src='index.js'></script>
+  <script src='./scripts/index.js'></script>
 </body>
 </html>
