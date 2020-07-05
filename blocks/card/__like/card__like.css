@@ -9,4 +9,9 @@
   background-repeat: no-repeat;
   background-position: right;
   background-color: #FFFFFF;
+  transition: opacity 0.2s;
+}
+
+.card__like:hover {
+  opacity: 0.6;
 }
