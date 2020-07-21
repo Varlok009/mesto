@@ -10,8 +10,13 @@
   background-position: right;
   background-color: #FFFFFF;
   transition: opacity 0.2s;
+  cursor: pointer;
 }
 
 .card__like:hover {
   opacity: 0.6;
+}
+
+.card__like:focus {
+  outline: none;
 }

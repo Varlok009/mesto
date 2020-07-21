@@ -28,52 +28,6 @@
       </div>
 
       <section class="card-container page__card-container">
-
-        <article class="card">
-          <img src="./images/photo_grid/lobster-nebula.jpg" alt="Туманность омаров" class="card__photo">
-          <div class="card__footer">
-            <h2 class="card__title">Туманность омаров</h2>
-            <button class="card__like" type="button"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img src="./images/photo_grid/milky-way.jpg" alt="Млечный путь" class="card__photo">
-          <div class="card__footer">
-            <h2 class="card__title">Млечный путь</h2>
-            <button class="card__like" type="button"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img src="./images/photo_grid/orion.jpg" alt="Созвездие Ориона" class="card__photo">
-          <div class="card__footer">
-            <h2 class="card__title">Созвездие Ориона</h2>
-            <!-- да, что то я слишком много времени у Вас забрал из-за невнимательности =/
-              лишканул немного)) -->
-            <button class="card__like" type="button"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img src="./images/photo_grid/solar-system.jpg" alt="Солнечная система" class="card__photo">
-          <div class="card__footer">
-            <h2 class="card__title">Солнечная система</h2>
-            <button class="card__like" type="button"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img src="./images/photo_grid/dawn.jpg" alt="Рассвет" class="card__photo">
-          <div class="card__footer">
-            <h2 class="card__title">Рассвет</h2>
-            <button class="card__like" type="button"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img src="./images/photo_grid/wormhole.jpg" alt="Кротовая нора" class="card__photo">
-          <div class="card__footer">
-            <h2 class="card__title">Кротовая нора</h2>
-            <button class="card__like" type="button"></button>
-          </div>
-        </article>
-
       </section>
 
     </main>
@@ -82,7 +36,7 @@
     </footer>
   </div>
 
-  <section class="popup">
+  <section class="popup popup_type_edit-profile">
     <form class="popup__container" method="GET" action='#' name='profile-info'>
       <h3 class="popup__head">Редактировать профиль</h3>
       <fieldset class="popup__form">          
@@ -93,6 +47,36 @@
       <button class="popup__icon-close" type="button"></button>
     </form>      
   </section>
+
+  <section class="popup popup_type_add-mesto">
+    <form class="popup__container" method="GET" action='#' name='add-mesto'>
+      <h3 class="popup__head">Новое место</h3>
+      <fieldset class="popup__form">          
+        <input type="text" name="name" class="popup__input popup__input_destiny_mesto" placeholder='Название' required>
+        <input type="" name="url" class="popup__input popup__input_destiny_url" placeholder='Ссылка на картинку' required>
+        <button type="submit" class="popup__button-save">Сохранить</button>
+      </fieldset>
+      <button class="popup__icon-close" type="button"></button>
+    </form>      
+  </section>
+
+  <section class="popup popup_type_open-img">
+    <div class="popup__container" >
+      
+    </div>      
+  </section>
+
+  <template id='card'>
+    <article class="card">
+      <button class="card__delete" type="button"></button>
+      <img src="" alt="" class="card__photo">
+      <div class="card__footer">
+        <h2 class="card__title"></h2>
+        <button class="card__like" type="button"></button>
+      </div>
+    </article>
+  </template>
+
   <script src='./scripts/index.js'></script>
 </body>
 </html>

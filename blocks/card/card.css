@@ -1,7 +1,10 @@
 @import url(./__footer/card__footer.css);
 @import url(./__like/card__like.css);
+@import url(./__like/_active/card__like_active.css);
 @import url(./__photo/card__photo.css);
 @import url(./__title/card__title.css);
+@import url(./__delete/card__delete.css);
+
 
 .card {
   display: flex;
@@ -9,4 +12,5 @@
   border-radius: 10px;
   overflow: hidden;
   max-height: 358px;
+  position: relative;
 }
