@@ -11,13 +11,13 @@ const likeButton = document.querySelector('.card__like');
 const formEdit = popupEdit.querySelector('.popup__container');
 const formAdd = popupAdd.querySelector('.popup__container');
 
-let profileName = document.querySelector('.profile__name');
-let profileTitle = document.querySelector('.profile__title');
-let inputName = popupEdit.querySelector('.popup__input_destiny_name');
-let inputProffession = popupEdit.querySelector('.popup__input_destiny_proffession');
+const profileName = document.querySelector('.profile__name');
+const profileTitle = document.querySelector('.profile__title');
+const inputName = popupEdit.querySelector('.popup__input_destiny_name');
+const inputProffession = popupEdit.querySelector('.popup__input_destiny_proffession');
 
-let inputMesto = popupAdd.querySelector('.popup__input_destiny_mesto');
-let inputUrl = popupAdd.querySelector('.popup__input_destiny_url');
+const inputMesto = popupAdd.querySelector('.popup__input_destiny_mesto');
+const inputUrl = popupAdd.querySelector('.popup__input_destiny_url');
 
 const cardContainer = document.querySelector('.card-container');
 const cardTemp = document.querySelector('#card').content;
@@ -31,7 +31,7 @@ let startCards = [
   {name: 'Кротовая нора', link: './images/photo_grid/wormhole.jpg'},
 ]
 
-function addNewCard(obgCard) { // Шаблон создания новой карточки
+function toCreateNewCard(obgCard) { // Шаблон создания новой карточки
   const newCard = cardTemp.cloneNode(true);
   newCard.querySelector('.card__photo').src = obgCard.link;
   newCard.querySelector('.card__photo').alt = obgCard.name;
@@ -52,19 +52,24 @@ function addNewCard(obgCard) { // Шаблон создания новой ка�
     popupImg.querySelector('.popup__img').src = obgCard.link;
     popupImg.querySelector('.popup__img').alt = obgCard.name;
     popupImg.querySelector('.popup__title').textContent = obgCard.name;
-    visionPopup(popupImg);
+    makeVisionPopup(popupImg);
   });
 
+  return newCard;
+}
+
+function addNewCard(newCard) { // Добавление новой карточки
   cardContainer.prepend(newCard);
 }
 
 function addStartCards(startCards) { // Загрузка стартовых карточек
   startCards.forEach(function(card) {
-    addNewCard(card)
+    const newCard = toCreateNewCard(card)
+    addNewCard(newCard)
   });
 }
 
-function visionPopup(popup) { //функция замены модификатора (display: flex)
+function makeVisionPopup(popup) { //функция замены модификатора (display: flex)
   popup.classList.toggle('popup_open');
   if (popupEdit.classList.contains('popup_open')){ //Условие для попапа редактирования профиля
     inputName.value = profileName.textContent;
@@ -74,17 +79,13 @@ function visionPopup(popup) { //функция замены модификато
     inputMesto.value = '';
     inputUrl.value = '';
   }
-  // if (popupImg.classList.contains('popup_open')){ //условие для попапа картинки
-  //   const popupForm = document.querySelector('popup popup_type_open-img');
-
-  // }
 }
 
 function saveEdit(evt) { // Сохранение изменений профиля
   evt.preventDefault();
   profileName.textContent = inputName.value;
   profileTitle.textContent = inputProffession.value;
-  visionPopup(popupEdit);
+  makeVisionPopup(popupEdit);
 }
 
 function saveAdd(evt) { // Добавление новой карточки, по введенным данным
@@ -92,17 +93,18 @@ function saveAdd(evt) { // Добавление новой карточки, п�
   const newMesto = {};
   newMesto.name = inputMesto.value;
   newMesto.link = inputUrl.value;
-  addNewCard(newMesto)
-  visionPopup(popupAdd);
+  const newCard = toCreateNewCard(newMesto);
+  addNewCard(newCard);
+  makeVisionPopup(popupAdd);
 }
 
 addStartCards(startCards);
 
-editButton.addEventListener('click', () => visionPopup(popupEdit)); //запускаем функцию по клику на кнопку редактирования
-addButton.addEventListener('click', () => visionPopup(popupAdd)); 
-closeButtonEdit.addEventListener('click', () => visionPopup(popupEdit)); //запускаем функцию по клику на кнопку закрытия формы
-closeButtonAdd.addEventListener('click', () => visionPopup(popupAdd));
-closeButtonImg.addEventListener('click', () => visionPopup(popupImg));
+editButton.addEventListener('click', () => makeVisionPopup(popupEdit)); //запускаем функцию по клику на кнопку редактирования
+addButton.addEventListener('click', () => makeVisionPopup(popupAdd)); 
+closeButtonEdit.addEventListener('click', () => makeVisionPopup(popupEdit)); //запускаем функцию по клику на кнопку закрытия формы
+closeButtonAdd.addEventListener('click', () => makeVisionPopup(popupAdd));
+closeButtonImg.addEventListener('click', () => makeVisionPopup(popupImg));
 formEdit.addEventListener('submit', saveEdit);
 formAdd.addEventListener('submit', saveAdd);
 
