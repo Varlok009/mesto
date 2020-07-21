@@ -1,9 +1,12 @@
 const popupEdit = document.querySelector('.popup_type_edit-profile'); //сохранили форму редактирования
 const popupAdd = document.querySelector('.popup_type_add-mesto'); //сохранили форму добавления
+const popupImg = document.querySelector('.popup_type_open-img');
 const editButton = document.querySelector('.profile__edit-button'); //сохранили кнопку редактирования
+const popupForm = document.querySelector('popup popup_type_open-img');
 const addButton = document.querySelector('.profile__add-button'); //сохранили кнопку добавления
 const closeButtonEdit = popupEdit.querySelector('.popup__icon-close');
 const closeButtonAdd = popupAdd.querySelector('.popup__icon-close');
+const closeButtonImg = popupImg.querySelector('.popup__icon-close');
 const likeButton = document.querySelector('.card__like');
 const formEdit = popupEdit.querySelector('.popup__container');
 const formAdd = popupAdd.querySelector('.popup__container');
@@ -43,6 +46,15 @@ function addNewCard(obgCard) { // Шаблон создания новой ка�
   deleteButton.addEventListener('click', (evt) => {
   evt.target.closest('.card').remove();
   });
+
+  const img = newCard.querySelector('.card__photo'); // Открытие картинки
+  img.addEventListener('click', (evt) => {
+    popupImg.querySelector('.popup__img').src = obgCard.link;
+    popupImg.querySelector('.popup__img').alt = obgCard.name;
+    popupImg.querySelector('.popup__title').textContent = obgCard.name;
+    visionPopup(popupImg);
+  });
+
   cardContainer.prepend(newCard);
 }
 
@@ -62,6 +74,10 @@ function visionPopup(popup) { //функция замены модификато
     inputMesto.value = '';
     inputUrl.value = '';
   }
+  // if (popupImg.classList.contains('popup_open')){ //условие для попапа картинки
+  //   const popupForm = document.querySelector('popup popup_type_open-img');
+
+  // }
 }
 
 function saveEdit(evt) { // Сохранение изменений профиля
@@ -86,6 +102,7 @@ editButton.addEventListener('click', () => visionPopup(popupEdit)); //запус
 addButton.addEventListener('click', () => visionPopup(popupAdd)); 
 closeButtonEdit.addEventListener('click', () => visionPopup(popupEdit)); //запускаем функцию по клику на кнопку закрытия формы
 closeButtonAdd.addEventListener('click', () => visionPopup(popupAdd));
+closeButtonImg.addEventListener('click', () => visionPopup(popupImg));
 formEdit.addEventListener('submit', saveEdit);
 formAdd.addEventListener('submit', saveAdd);
 
